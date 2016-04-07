@@ -1,0 +1,24 @@
+<div class ="manywords">
+  <% if @scores %>
+    <h2>
+      Here are the scores for your words: <br><br>
+      <% @scores.each do |word, score| %>
+         Word: <span><%= word %></span>  Score: <span><%=score %></span> <br>
+      <%end%>
+    </h2>
+  <% end %>
+
+  <div class ="many">
+    <form action="" method="post" accept-charset="utf-8">
+      <label for="words">Scrabble Words</label>
+      <input type="text" name="words" value="" id="words">
+
+      <input class = "button" type="submit" value="Score Words">
+    </form>
+  </div>
+</div>
+
+<!--
+<div class ="params">
+<%= params %>
+</div> -->

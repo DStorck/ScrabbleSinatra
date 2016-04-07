@@ -1,0 +1,122 @@
+html {
+  background-image: url("../images/scrabble-tiles.jpg");
+  font-family:Century Gothic;
+}
+
+body {
+  width:90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: cornflowerblue;
+  border: 4px outset navy;
+}
+
+main {
+  height: 480px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color:blue;
+}
+
+a:hover {
+  text-shadow: 2px 2px 2px white;
+}
+
+header {
+  background-color: lightblue;
+  text-align: center;
+  width:100%;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-style: italic;
+  margin: 1rem;
+}
+
+h2 {
+  /*border: 2px solid green;*/
+  font-size: 2rem;
+}
+
+aside {
+  float:left;
+}
+
+img {
+  border: 10px solid navy;
+  height: 300px;
+  margin: 4%;
+}
+
+div.cartoon {
+  border: 2px solid blue;
+
+}
+
+input.button {
+  background-color: navy;
+  color:white;
+  font-size: 1.4rem;
+}
+
+div.scoreform {
+  margin-top: 5%;
+}
+
+div.scoreword {
+  display:inline-block;
+  margin-left: 5%;
+}
+
+div.links {
+  /*background-color: white;*/
+  /*border: 3px solid purple;*/
+  display:inline-block;
+  margin: 2%;
+}
+
+div.manywords {
+  float:left;
+  margin-left: 5%;
+}
+
+label {
+  font-size: 2rem;
+}
+
+input{
+  font-size: 1.2rem;
+}
+
+span {
+  color: lightblue;
+}
+
+footer {
+  display: inline-block;
+  width: 100%;
+  background-color: gray;
+}
+
+footer a {
+  width: 49%;
+  background-color: gray;
+  display:inline-block;
+  text-align:center;
+}
+
+footer a:link, footer a:visited{
+  font-size: 2rem;
+  color:white;
+}
+
+footer a:hover {
+  text-shadow: 1.5px 1.5px 1.5px blue;
+}

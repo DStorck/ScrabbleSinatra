@@ -1,0 +1,25 @@
+
+<div class ="scoreword">
+  <% if @wordscore.class == Fixnum %>
+    <h2>
+      The word <span><%= @word %></span> is worth <%= @wordscore %> points.
+    </h2>
+  <% elsif @wordscore == false %>
+  <h2> Try again with a real word, please.</h2>
+  <% end %>
+
+
+  <div class ="scoreform">
+    <form action="/score" method="post" accept-charset="utf-8">
+      <label for="word">Scrabble Word</label>
+      <input type="text" name="word" value="" id="word">
+
+      <input class = "button" type="submit" value="Score Word">
+    </form>
+  </div>
+</div>
+
+<!--
+<div class ="params">
+<%= params %>
+</div> -->

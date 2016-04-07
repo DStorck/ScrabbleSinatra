@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="css" href="stylesheets/mainstyle.css">
+    <meta charset="UTF-8">
+    <title>Static-Site</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">Scrabble!</a></h1>
+    </header>
+
+    <aside>
+      <img src ='images/catdog.png'>
+    </aside>
+
+    <main> <%= yield %>
+    </main>
+
+    <footer>
+      <a href ="/score">Score a word</a>
+      <a href ="/score-many">Score many words</a>
+    </footer>
+
+
+  </body>
+</html>
