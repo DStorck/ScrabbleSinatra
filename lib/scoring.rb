@@ -44,6 +44,15 @@ SEVEN_LETTER_BONUS = 50
     return "Unscorable"
   end
 
+  def self.show_letter_scores(word)
+    letter_value_hash =  {}
+    letters = word.chars
+    letters.each do |letter|
+      letter_value_hash[letter] = self.letter_value(letter)
+    end
+    letter_value_hash
+  end
+
 #return highest score from array_of_tiles
 #in case of tie :
 #      -better to use fewer tiles

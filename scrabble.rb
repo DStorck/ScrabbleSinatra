@@ -19,6 +19,7 @@ class ScrabbleSinatra < Sinatra::Base
   post "/score" do
     @wordscore = Scrabble::Scoring.score(params["word"])
     @word = params["word"]
+    @score_hash = Scrabble::Scoring.show_letter_scores(params['word'])
     erb :score
   end
 
@@ -27,13 +28,15 @@ class ScrabbleSinatra < Sinatra::Base
   end
 
   post "/score-many" do
-    @scores = Scrabble::Scoring.score_many(params["words"])
-    erb :score_many
+      @scores = Scrabble::Scoring.score_many(params["words"])
+      @word_hash = @scores.each_key.map { |word| word }
+      erb :score_many
   end
-  
+
   get "/:word" do
     @wordscore = Scrabble::Scoring.score(params[:word])
     @word = params[:word]
+    @score_hash = Scrabble::Scoring.show_letter_scores(params['word'])
     erb :score
   end
 

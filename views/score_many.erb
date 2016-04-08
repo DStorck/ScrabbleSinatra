@@ -4,14 +4,23 @@
       Here are the scores for your words: <br><br>
       <% @scores.each do |word, score| %>
          Word: <span><%= word %></span>  Score: <span><%= score %></span> <br>
+         <% letter_value_hash = Scrabble::Scoring.show_letter_scores(word) %>
+         <% letter_value_hash.each do |letter, score| %>
+            <div class= "small"> Letter: <span><%= letter %></span>  Value: <span><%= score %></span> <br></div>
+            <%end%>
       <%end%>
     </h2>
+
     <% elsif @scores && params["score_method"] == "no-bonus" %>
     <h2>
       Here are the scores for your words: <br><br>
       <% @scores.each do |word, score| %>
         <% score -= 50 if word.length == 7 %>
          Word: <span><%= word %></span>  Score: <span><%= score %></span> <br>
+         <% letter_value_hash = Scrabble::Scoring.show_letter_scores(word) %>
+         <% letter_value_hash.each do |letter, score| %>
+            <div class= "small"> Letter: <span><%= letter %></span>  Value: <span><%= score %></span> <br></div>
+            <%end%>
       <%end%>
     </h2>
   <% end %>
@@ -34,7 +43,6 @@
       <input class = 'button' type="submit" value="Score Words">
     </form>
   </div>
-
 </div>
 
 

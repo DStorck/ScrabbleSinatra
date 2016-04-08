@@ -4,6 +4,12 @@
     <h2>
       The word <span><%= @word %></span> is worth <%= @wordscore %> points.
     </h2>
+    <h3>
+    <% @score_hash.each do |letter, score| %>
+       Letter: <span><%= letter %></span>  Value: <span><%= score %></span> <br>
+    <%end%>
+  </h3>
+
   <% elsif @wordscore == "Unscorable" %>
   <h2> Try again with a real word, please.</h2>
   <% end %>
