@@ -41,8 +41,7 @@ SEVEN_LETTER_BONUS = 50
       end
       return word_score
     end
-    puts "sorry, you suck."
-    return false
+    return "Unscorable"
   end
 
 #return highest score from array_of_tiles

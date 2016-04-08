@@ -1,9 +1,17 @@
 <div class ="manywords">
-  <% if @scores %>
+  <% if @scores && params["score_method"] == "bonus"%>
     <h2>
       Here are the scores for your words: <br><br>
       <% @scores.each do |word, score| %>
-         Word: <span><%= word %></span>  Score: <span><%=score %></span> <br>
+         Word: <span><%= word %></span>  Score: <span><%= score %></span> <br>
+      <%end%>
+    </h2>
+    <% elsif @scores && params["score_method"] == "no-bonus" %>
+    <h2>
+      Here are the scores for your words: <br><br>
+      <% @scores.each do |word, score| %>
+        <% score -= 50 if word.length == 7 %>
+         Word: <span><%= word %></span>  Score: <span><%= score %></span> <br>
       <%end%>
     </h2>
   <% end %>
@@ -13,10 +21,24 @@
       <label for="words">Scrabble Words</label>
       <input type="text" name="words" value="" id="words">
 
-      <input class = "button" type="submit" value="Score Words">
+      <!-- <input class = "button" type="submit" value="Score Words"> -->
+    <!-- </form> -->
+
+    <!-- <form action="" method="post"> -->
+      <fieldset class = 'bonus'>
+        <legend>Would you like to have 7-letter words scored with a 50 point bonus?</legend>
+        <label><input type="radio" name="score_method" value="no-bonus">No Bonus</label>
+        <label><input type="radio" name="score_method" value="bonus"> 7 letter bonus</label>
+      </fieldset>
+
+      <input class = 'button' type="submit" value="Score Words">
     </form>
   </div>
+
 </div>
+
+
+
 
 <!--
 <div class ="params">
