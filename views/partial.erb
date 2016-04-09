@@ -1,0 +1,5 @@
+Word: <span><%= word %></span>  Score: <span><%= score %></span> <br>
+<% letter_value_hash = Scrabble::Scoring.show_letter_scores(word) %>
+<% letter_value_hash.each do |letter, score| %>
+   <div class= "small"> Letter: <span><%= letter %></span>  Value: <span><%= score %></span> <br></div>
+   <%end%>

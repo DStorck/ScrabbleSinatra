@@ -19,16 +19,20 @@ SEVEN_LETTER_BONUS = 50
     !word.match(/[^A-Za-z]/)
   end
 
-  def self.letter_value(letter)
-    letter = letter.upcase
-    LETTERS.each do |key, value|
-      if key.include? letter
-        return value
+
+    def self.letter_value(letter)
+      letter = letter.upcase
+      LETTERS.each do |key, value|
+        if key.include? letter
+          return value
+        end
       end
+      return 0
     end
-  end
 
   def self.score(word)
+    joke = %w(Grrr grrr GRRR)
+    return "Grrr is not a word." if joke.include? word
     if valid?(word)
       word = word.upcase!
       word_score = 0
@@ -45,12 +49,13 @@ SEVEN_LETTER_BONUS = 50
   end
 
   def self.show_letter_scores(word)
-    letter_value_hash =  {}
-    letters = word.chars
-    letters.each do |letter|
-      letter_value_hash[letter] = self.letter_value(letter)
-    end
-    letter_value_hash
+    # if valid?(word)
+      letter_value_hash =  {}
+      letters = word.chars
+      letters.each do |letter|
+        letter_value_hash[letter] = self.letter_value(letter)
+      end
+      return letter_value_hash
   end
 
 #return highest score from array_of_tiles
