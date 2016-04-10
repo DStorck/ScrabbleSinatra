@@ -32,7 +32,7 @@ SEVEN_LETTER_BONUS = 50
 
   def self.score(word)
     joke = %w(Grrr grrr GRRR)
-    return "Grrr is not a word." if joke.include? word
+    return "Grrr is not a word, no" if joke.include? word
     if valid?(word)
       word = word.upcase!
       word_score = 0
@@ -45,7 +45,7 @@ SEVEN_LETTER_BONUS = 50
       end
       return word_score
     end
-    return "Unscorable"
+    return "No"
   end
 
   def self.show_letter_scores(word)

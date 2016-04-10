@@ -12,7 +12,7 @@ body {
 }
 
 main {
-  height: 480px;
+  height: 450px;
 }
 
 a {
@@ -44,6 +44,7 @@ h1 {
 h2 {
   /*border: 2px solid green;*/
   font-size: 2rem;
+  color:navy;
 }
 
 aside {
@@ -74,18 +75,17 @@ div.scoreform {
 div.scoreword {
   display:inline-block;
   margin-left: 5%;
-}
-
-div.links {
-  /*background-color: white;*/
-  /*border: 3px solid purple;*/
-  display:inline-block;
-  margin: 2%;
+  float:left;
 }
 
 div.manywords {
   float:left;
   margin-left: 5%;
+}
+
+div.links {
+  display:inline-block;
+  margin: 2%;
 }
 
 label {
@@ -98,6 +98,28 @@ input{
 
 span {
   color: lightblue;
+}
+
+span.letter{
+  font-size: 1.7rem;
+  padding-left: .4rem;
+}
+
+span.score {
+  font-size: .9rem;
+  padding-top: .5rem;
+}
+
+div.tile {
+border: 3px navy solid;
+display: inline-block;
+background-color: navy;
+border-radius: 4px;
+width: 3rem;
+height: 2.4rem;
+padding:.2rem;
+margin-top: 1rem;
+box-shadow: 4px 4px 1px #514c6f;
 }
 
 footer {

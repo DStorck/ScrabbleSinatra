@@ -2,19 +2,17 @@
 <div class ="scoreword">
   <% if @wordscore.class == Fixnum %>
     <h2>
-      The word <span><%= @word %></span> is worth <%= @wordscore %> points.
-    </h2>
-    <h3>
-    <% @score_hash.each do |letter, score| %>
-       Letter: <span><%= letter %></span>  Value: <span><%= score %></span> <br>
+    <% @word.chars.each do |letter| %>
+       <div class ='tile'><span class = "letter"><%= letter %></span>  <span class = 'score'><%= Scrabble::Scoring.letter_value(letter) %></span></div>
     <%end%>
-  </h3>
+    = <%= @wordscore %> points
+   </h2>
 
-  <% elsif @wordscore == "Unscorable" %>
+  <% elsif @wordscore == "No" %>
   <h2> Try again with a real word, please.</h2>
 
-  <% elsif @wordscore == "Grrr is not a word." %>
-  <h2> "Grrr is not a word."</h2>
+  <% elsif @wordscore == "Grrr is not a word, no" %>
+  <h2> Grrr is not a word.</h2>
   <% end %>
 
 
